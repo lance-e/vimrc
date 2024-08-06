@@ -43,8 +43,11 @@ nmap <leader>w :w!<cr>
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
-" Show line number ： 
+" Show line number
 set number relativenumber
+
+" Clipboard
+set clipboard=unnamed,unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
