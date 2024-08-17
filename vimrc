@@ -78,6 +78,9 @@ set ruler
 " Height of the command bar
 set cmdheight=1
 
+" Show cmd 
+set showcmd
+
 " A buffer becomes hidden when it is abandoned
 set hid
 
@@ -190,6 +193,9 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+" Close scratch window in some case
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
