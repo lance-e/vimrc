@@ -34,7 +34,7 @@ au FocusGained,BufEnter * silent! checktime
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ","
+let mapleader = ','
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -399,8 +399,9 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 " NerdTree
-" Plugin NerdTree's map
-map <C-n> :NERDTreeToggle<CR>
+" keyboard map
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
 
 " Start NERDTree. If a file is specified, move the cursor to its window.
 autocmd StdinReadPre * let s:std_in=1
