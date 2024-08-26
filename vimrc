@@ -403,5 +403,6 @@ call plug#begin()
 
 " List your plugins here
 Plug 'ycm-core/YouCompleteMe'
+Plug 'preservim/nerdtree'
 
 call plug#end()
