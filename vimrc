@@ -415,11 +415,45 @@ autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silen
 autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
             \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
- 
+
+"coc.nvim
+"keyboard map
+" Use <Tab> and <S-Tab> to navigate the completion list
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+
+"vim-airline
+set laststatus=2  
+let g:airline_powerline_fonts = 1  
+let g:airline#extensions#tabline#enabled = 1 
+let g:airline_theme='moloai'  
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '▶'
+let g:airline_left_alt_sep = '❯'
+let g:airline_right_sep = '◀'
+let g:airline_right_alt_sep = '❮'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+
+
+"nerdcommenter
+" NERD Commenter setting
+let g:NERDSpaceDelims = 1
+let g:NERDCommentEmptyLines = 1
+
+
 call plug#begin()
 
 " List your plugins here
-Plug 'ycm-core/YouCompleteMe'
 Plug 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
