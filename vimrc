@@ -452,7 +452,7 @@ nnoremap <Leader>f :FzfFiles<CR>
 nnoremap <Leader>b :FzfBuffers<CR>
 nnoremap <Leader>h :FzfHistory<CR>
 nnoremap <Leader>g :FzfGitFiles<CR> 
-nnoremap <Leader>s :Files /<CR>
+nnoremap <Leader>s :FzfFiles /<CR>
 
 call plug#begin()
 
