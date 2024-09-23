@@ -445,6 +445,13 @@ let g:airline_symbols.branch = '⎇'
 let g:NERDSpaceDelims = 1
 let g:NERDCommentEmptyLines = 1
 
+"fzf
+"
+let g:fzf_command_prefix = 'Fzf'
+nnoremap <Leader>f :FzfFiles<CR>
+nnoremap <Leader>b :FzfBuffers<CR>
+nnoremap <Leader>h :FzfHistory<CR>
+nnoremap <Leader>g :FzfGitFiles<CR> 
 
 call plug#begin()
 
@@ -455,5 +462,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdcommenter'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
