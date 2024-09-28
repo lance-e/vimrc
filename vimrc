@@ -454,6 +454,10 @@ nnoremap <Leader>h :FzfHistory<CR>
 nnoremap <Leader>g :FzfGitFiles<CR> 
 nnoremap <Leader>s :FzfFiles /<CR>
 
+"tagbar
+"
+nmap <F8> :TagbarToggle<CR>
+
 call plug#begin()
 
 " List your plugins here
@@ -465,5 +469,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'preservim/tagbar'
 
 call plug#end()
