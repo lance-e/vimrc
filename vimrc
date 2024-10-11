@@ -402,6 +402,7 @@ endif
 " keyboard map
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
+let g:NERDTreeFileLines = 1
 
 " Start NERDTree. If a file is specified, move the cursor to its window.
 autocmd StdinReadPre * let s:std_in=1
@@ -452,11 +453,13 @@ nnoremap <Leader>f :FzfFiles<CR>
 nnoremap <Leader>b :FzfBuffers<CR>
 nnoremap <Leader>h :FzfHistory<CR>
 nnoremap <Leader>g :FzfGitFiles<CR> 
+nnoremap <Leader>ag :FzfAg<CR> 
 nnoremap <Leader>s :FzfFiles /<CR>
 
 "tagbar
 "
 nmap <F8> :TagbarToggle<CR>
+autocmd VimLeave * TagbarClose
 
 call plug#begin()
 
