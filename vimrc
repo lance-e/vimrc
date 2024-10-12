@@ -151,8 +151,8 @@ try
 catch
 endtry
 
-" Quickly change colorscheme
-nnoremap <Leader>c :colorscheme tokyonight<CR>
+" Quickly change other you want colorscheme
+nnoremap <Leader><space> :colorscheme tokyonight<CR>
 
 set background=dark
 
