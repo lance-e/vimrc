@@ -141,10 +141,18 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
+" Enalbe true color in support terminal
+if $COLORTERM == 'truecolor'
+    set termguicolors
+endif
+
 try
     colorscheme desert
 catch
 endtry
+
+" Quickly change colorscheme
+nnoremap <Leader>c :colorscheme tokyonight<CR>
 
 set background=dark
 
@@ -433,9 +441,9 @@ let g:airline_theme='moloai'
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-let g:airline_left_sep = '▶'
+let g:airline_left_sep = ''
 let g:airline_left_alt_sep = '❯'
-let g:airline_right_sep = '◀'
+let g:airline_right_sep = ''
 let g:airline_right_alt_sep = '❮'
 let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.branch = '⎇'
@@ -461,6 +469,13 @@ nnoremap <Leader>s :FzfFiles /<CR>
 nmap <F8> :TagbarToggle<CR>
 autocmd VimLeave * TagbarClose
 
+"colorscheme
+"
+"tokyonight
+let g:tokyonight_style = 'storm' " available: night, storm
+let g:tokyonight_enable_italic = 1
+
+
 call plug#begin()
 
 " List your plugins here
@@ -473,5 +488,6 @@ Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/tagbar'
+Plug 'ghifarit53/tokyonight-vim'
 
 call plug#end()
