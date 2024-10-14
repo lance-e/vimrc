@@ -146,13 +146,15 @@ if $COLORTERM == 'truecolor'
     set termguicolors
 endif
 
-try
-    colorscheme desert
-catch
-endtry
+autocmd VimEnter * call s:setup_colors()
+function! s:setup_colors()
+    try
+        colorscheme tokyonight
+    catch
+        colorscheme desert
+    endtry
+endfunction
 
-" Quickly change other you want colorscheme
-nnoremap <Leader><space> :colorscheme tokyonight<CR>
 
 set background=dark
 
@@ -475,10 +477,15 @@ autocmd VimLeave * TagbarClose
 let g:tokyonight_style = 'storm' " available: night, storm
 let g:tokyonight_enable_italic = 1
 
+"floaterm 
+"
+nnoremap   <silent>   <F12>   :FloatermToggle<CR>
+tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
 
 call plug#begin()
 
 " List your plugins here
+Plug 'ghifarit53/tokyonight-vim'
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
@@ -488,6 +495,6 @@ Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/tagbar'
-Plug 'ghifarit53/tokyonight-vim'
+Plug 'voldikss/vim-floaterm'
 
 call plug#end()
