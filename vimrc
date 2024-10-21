@@ -439,7 +439,7 @@ inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 set laststatus=2  
 let g:airline_powerline_fonts = 1  
 let g:airline#extensions#tabline#enabled = 1 
-let g:airline_theme='moloai'  
+" let g:airline_theme='moloai'  
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
@@ -496,5 +496,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/tagbar'
 Plug 'voldikss/vim-floaterm'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
