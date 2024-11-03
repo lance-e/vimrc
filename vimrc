@@ -141,10 +141,8 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-" Enalbe true color in support terminal
-if $COLORTERM == 'truecolor'
-    set termguicolors
-endif
+" Enalbe true color ,if terminal not supprot you should close it
+set termguicolors
 
 autocmd VimEnter * call s:setup_colors()
 function! s:setup_colors()
@@ -482,6 +480,25 @@ let g:tokyonight_enable_italic = 1
 nnoremap   <silent>   <F12>   :FloatermToggle<CR>
 tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
 
+"vim-go
+"
+let g:go_def_mode = 'gopls'  
+let g:go_info_mode = 'gopls'  
+let g:go_auto_type_info = 1    
+" highlight
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+
+let g:go_imports_autosave = 1
+autocmd BufWritePre *.go :silent! :GoFmt
+autocmd BufWritePre *.go :silent! :GoImports
+autocmd FileType go setlocal omnifunc=go#complete#Complete
+set completeopt=menuone,noinsert,noselect
+ 
+
 call plug#begin()
 
 " List your plugins here
@@ -497,5 +514,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'preservim/tagbar'
 Plug 'voldikss/vim-floaterm'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+
 
 call plug#end()
