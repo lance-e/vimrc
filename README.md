@@ -16,6 +16,8 @@ sudo add-apt-repository ppa:jonathonf/vim
 sudo apt install vim
 ```
 
+~~btw I use Arch Linux~~
+
 ##### coc.nvim
 Make sure use Vim >= 9.0.0438 or Neovim >= 0.8.0.
 
