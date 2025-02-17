@@ -458,6 +458,7 @@ let g:NERDCommentEmptyLines = 1
 "
 let g:fzf_command_prefix = 'Fzf'
 nnoremap <Leader>f :FzfFiles<CR>
+nnoremap <Leader>r :FzfRG<CR>
 nnoremap <Leader>b :FzfBuffers<CR>
 nnoremap <Leader>h :FzfHistory<CR>
 nnoremap <Leader>g :FzfGitFiles<CR> 
@@ -514,7 +515,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'preservim/tagbar'
 Plug 'voldikss/vim-floaterm'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 
 
 call plug#end()
