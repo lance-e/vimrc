@@ -144,15 +144,6 @@ endif
 " Enalbe true color ,if terminal not supprot you should close it
 set termguicolors
 
-autocmd VimEnter * call s:setup_colors()
-function! s:setup_colors()
-    try
-        colorscheme tokyonight
-    catch
-        colorscheme desert
-    endtry
-endfunction
-
 
 set background=dark
 
@@ -473,6 +464,7 @@ autocmd VimLeave * TagbarClose
 "colorscheme
 "
 "tokyonight
+autocmd VimEnter * colorscheme tokyonight
 let g:tokyonight_style = 'storm' " available: night, storm
 let g:tokyonight_enable_italic = 1
 
